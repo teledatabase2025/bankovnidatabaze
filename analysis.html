@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FINTRON – Finanční analýza</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="analysis">
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-mark">FIN</div>
+      <div>
+        <h1>FINTRON</h1>
+        <p>Modul finanční analýzy</p>
+      </div>
+    </div>
+    <div class="case-meta">
+      <span>SPIS FTR-2026-0417</span>
+      <strong>4 VÝPISY NAČTENY</strong>
+    </div>
+  </header>
+
+  <main class="page-shell analysis-page compact-analysis-page">
+    <div class="analysis-topline compact-topline">
+      <div>
+        <span class="eyebrow">ANALYTICKÉ PRACOVIŠTĚ</span>
+        <h2>Finanční analýza načtených výpisů</h2>
+      </div>
+      <button id="backToUpload" class="secondary-action" type="button">ZPĚT K NAČTENÝM VÝPISŮM</button>
+    </div>
+
+    <section class="analysis-strips" aria-label="Druhy finanční analýzy">
+      <article class="analysis-strip analysis-strip-high">
+        <div class="strip-heading">
+          <span class="tool-number">01</span>
+          <div>
+            <h3>Analýza vysokých transakcí</h3>
+            <p>Transakce nad 50 000 Kč</p>
+          </div>
+        </div>
+        <div class="strip-primary-controls">
+          <label>Bankovní výpis<select id="highPerson"></select></label>
+          <button class="run-analysis" data-analysis="high" type="button">PROVÉST ANALÝZU</button>
+        </div>
+      </article>
+
+      <article class="analysis-strip">
+        <div class="strip-heading">
+          <span class="tool-number">02</span>
+          <div>
+            <h3>Analýza vzájemných transakcí</h3>
+            <p>Přímé převody mezi dvěma účty</p>
+          </div>
+        </div>
+        <div class="strip-pair-controls">
+          <label>První výpis<select id="mutualFirst"></select></label>
+          <span class="strip-symbol">↔</span>
+          <label>Druhý výpis<select id="mutualSecond"></select></label>
+          <button class="run-analysis" data-analysis="mutual" type="button">PROVÉST ANALÝZU</button>
+        </div>
+      </article>
+
+      <article class="analysis-strip">
+        <div class="strip-heading">
+          <span class="tool-number">03</span>
+          <div>
+            <h3>Analýza stejných odesílatelů a příjemců</h3>
+            <p>Společné protistrany ve dvou výpisech</p>
+          </div>
+        </div>
+        <div class="strip-pair-controls">
+          <label>První výpis<select id="commonFirst"></select></label>
+          <span class="strip-symbol">⇄</span>
+          <label>Druhý výpis<select id="commonSecond"></select></label>
+          <button class="run-analysis" data-analysis="common" type="button">PROVÉST ANALÝZU</button>
+        </div>
+      </article>
+    </section>
+
+    <section class="global-filter-bar" aria-label="Společné filtry analýz">
+      <div class="global-filter-heading">
+        <span class="filter-icon">⌕</span>
+        <div>
+          <h3>Společné filtry výsledků</h3>
+          <p>Platí pro všechny tři analýzy</p>
+        </div>
+      </div>
+      <label>Datum od<input id="highDateFrom" type="date" min="2026-01-01" max="2026-06-16" value="2026-01-01"></label>
+      <label>Datum do<input id="highDateTo" type="date" min="2026-01-01" max="2026-06-16" value="2026-06-16"></label>
+      <label>Směr transakce
+        <select id="highDirection">
+          <option value="all">Příchozí i odchozí</option>
+          <option value="in">Pouze příchozí</option>
+          <option value="out">Pouze odchozí</option>
+        </select>
+      </label>
+      <label class="global-search">Jméno, protistrana nebo údaj transakce
+        <input id="highSearch" type="search" autocomplete="off" placeholder="Alespoň 3 znaky">
+      </label>
+      <button id="resetFilters" class="filter-reset" type="button">VYMAZAT FILTRY</button>
+      <p class="filter-explanation">U vzájemných transakcí se příchozí a odchozí směr vztahuje k prvnímu vybranému výpisu.</p>
+    </section>
+
+    <section id="progressArea" class="analysis-progress compact-progress" hidden>
+      <div class="progress-copy"><strong id="progressLabel">Zahajuji analýzu…</strong><span id="progressPercent">0 %</span></div>
+      <div class="progress-track"><i id="progressBar"></i></div>
+    </section>
+
+    <section id="results" class="results-area compact-results">
+      <div class="results-placeholder compact-placeholder">
+        <div class="placeholder-icon">⌁</div>
+        <h3>Výsledek se zobrazí v tomto prostoru</h3>
+        <p>Zvolte typ analýzy a spusťte automatizované porovnání.</p>
+      </div>
+    </section>
+  </main>
+
+  <div id="messageModal" class="modal" hidden>
+    <div class="modal-card" role="alertdialog" aria-modal="true" aria-labelledby="modalTitle">
+      <span class="modal-symbol">!</span>
+      <h3 id="modalTitle">Nelze provést analýzu</h3>
+      <p id="modalText">Nelze srovnávat stejný výpis.</p>
+      <button id="modalClose" type="button">ROZUMÍM</button>
+    </div>
+  </div>
+
+  <footer>FINTRON Financial Transaction Analysis · interní pracovní prostředí</footer>
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
