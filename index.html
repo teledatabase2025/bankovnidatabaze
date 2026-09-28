@@ -26,6 +26,7 @@
       background: rgba(242, 201, 109, .065) !important;
       box-shadow: none !important;
     }
+
     .access-notice > div {
       display: flex !important;
       flex-wrap: wrap;
@@ -33,6 +34,7 @@
       gap: 4px 9px;
       min-width: 0;
     }
+
     .access-notice strong {
       margin: 0 !important;
       color: #f2c96d !important;
@@ -42,11 +44,13 @@
       letter-spacing: .075em !important;
       text-transform: uppercase;
     }
+
     .access-notice span:not(.access-pulse) {
       color: #c7baa0 !important;
       font-size: 10px !important;
       line-height: 1.4 !important;
     }
+
     .access-notice small {
       margin-left: auto;
       color: #8e826c !important;
@@ -54,6 +58,7 @@
       line-height: 1.4 !important;
       white-space: nowrap;
     }
+
     .access-pulse {
       flex: 0 0 auto;
       width: 7px !important;
@@ -63,6 +68,7 @@
       box-shadow: 0 0 0 5px rgba(242,201,109,.08), 0 0 13px rgba(242,201,109,.65) !important;
       animation: fintronAccessPulse 1.35s infinite;
     }
+
     @keyframes fintronAccessPulse {
       50% { opacity: .35; transform: scale(.78); }
     }
@@ -74,6 +80,7 @@
       gap: 8px !important;
       margin-top: 0 !important;
     }
+
     .upload-card,
     .upload-page .upload-card {
       display: grid !important;
@@ -92,16 +99,22 @@
       box-shadow: none !important;
       transform: none !important;
     }
+
     .upload-card:hover {
       border-left-color: #5dc2d6 !important;
       background: #142131 !important;
       transform: none !important;
     }
-    .upload-card.is-loading { border-left-color: #f2c96d !important; }
+
+    .upload-card.is-loading {
+      border-left-color: #f2c96d !important;
+    }
+
     .upload-card.is-loaded {
       border-left-color: #7de2be !important;
       background: linear-gradient(90deg, rgba(19,41,43,.72), rgba(16,29,39,.9)) !important;
     }
+
     .person-index {
       display: grid !important;
       place-items: center;
@@ -112,34 +125,43 @@
       font-size: 11px !important;
       font-weight: 900;
     }
-    .upload-identity { min-width: 0; }
+
+    .upload-identity {
+      min-width: 0;
+    }
+
     .upload-card h3 {
       margin: 0 !important;
       color: #e9f0f7;
       font-size: 17px !important;
       line-height: 1.25;
     }
+
     .upload-card p {
       margin: 3px 0 0 !important;
       color: #91a1b4;
       font-size: 11px !important;
     }
+
     .account-preview {
       min-width: 0;
       display: grid;
       gap: 2px;
     }
+
     .account-preview small {
       color: #71849a;
       font-size: 8px;
       font-weight: 850;
       letter-spacing: .11em;
     }
+
     .account-preview strong {
       color: #dbe7f2;
       font-size: 12px;
       font-variant-numeric: tabular-nums;
     }
+
     .account-preview span {
       overflow: hidden;
       color: #88a0b7;
@@ -147,34 +169,43 @@
       text-overflow: ellipsis;
       white-space: nowrap;
     }
+
     .upload-load-zone {
       display: grid !important;
       grid-template-columns: 1fr !important;
       gap: 4px !important;
       min-width: 0;
     }
+
     .upload-card-head {
       display: flex !important;
       justify-content: flex-start !important;
       align-items: center;
     }
+
     .upload-state {
       color: #5dc2d6 !important;
       font-size: 9px !important;
       font-weight: 900 !important;
       letter-spacing: .1em !important;
     }
-    .is-loaded .upload-state { color: #7de2be !important; }
+
+    .is-loaded .upload-state {
+      color: #7de2be !important;
+    }
+
     .card-message {
       color: #91a1b4;
       font-size: 9px;
       line-height: 1.35;
     }
+
     .card-progress {
       height: 3px !important;
       overflow: hidden;
       background: #29384a !important;
     }
+
     .card-progress i {
       display: block;
       height: 100%;
@@ -188,16 +219,31 @@
       border: 1px solid #2b3a4d;
       background: rgba(15,24,36,.86);
     }
-    .upload-summary span { font-size: 9px !important; }
-    .upload-summary strong { margin-top: 3px !important; font-size: 14px !important; }
-    .upload-summary .primary-action { padding: 10px 14px !important; font-size: 10px !important; }
+
+    .upload-summary span {
+      font-size: 9px !important;
+    }
+
+    .upload-summary strong {
+      margin-top: 3px !important;
+      font-size: 14px !important;
+    }
+
+    .upload-summary .primary-action {
+      padding: 10px 14px !important;
+      font-size: 10px !important;
+    }
+
     .upload-page .system-note {
       margin-top: 10px !important;
       padding: 12px 15px !important;
       font-size: 10px !important;
       line-height: 1.5 !important;
     }
-    .upload-page .system-note p { margin-top: 4px !important; }
+
+    .upload-page .system-note p {
+      margin-top: 4px !important;
+    }
 
     @media (max-width: 820px) {
       .upload-card,
@@ -206,16 +252,29 @@
         gap: 10px !important;
         padding: 11px 12px !important;
       }
+
       .upload-load-zone {
         grid-column: 2 / -1;
         grid-template-columns: minmax(115px,.45fr) 1fr !important;
         align-items: center;
         gap: 8px !important;
       }
-      .upload-card-head { grid-column: 1; }
-      .card-message { display: none; }
-      .card-progress { grid-column: 2; }
-      .access-notice small { margin-left: 0; }
+
+      .upload-card-head {
+        grid-column: 1;
+      }
+
+      .card-message {
+        display: none;
+      }
+
+      .card-progress {
+        grid-column: 2;
+      }
+
+      .access-notice small {
+        margin-left: 0;
+      }
     }
 
     @media (max-width: 560px) {
@@ -223,34 +282,67 @@
         width: min(100% - 18px, 1180px);
         padding-top: 14px;
       }
+
       .access-notice {
         align-items: flex-start;
         margin-bottom: 8px !important;
         padding: 8px 10px !important;
       }
+
       .access-notice > div {
         display: block !important;
       }
+
       .access-notice strong,
       .access-notice span:not(.access-pulse),
       .access-notice small {
         display: block;
       }
-      .access-notice strong { font-size: 9px !important; }
-      .access-notice span:not(.access-pulse) { margin-top: 2px; font-size: 8px !important; }
-      .access-notice small { margin-top: 2px; font-size: 8px !important; white-space: normal; }
 
-      .upload-grid { gap: 6px !important; }
+      .access-notice strong {
+        font-size: 9px !important;
+      }
+
+      .access-notice span:not(.access-pulse) {
+        margin-top: 2px;
+        font-size: 8px !important;
+      }
+
+      .access-notice small {
+        margin-top: 2px;
+        font-size: 8px !important;
+        white-space: normal;
+      }
+
+      .upload-grid {
+        gap: 6px !important;
+      }
+
       .upload-card,
       .upload-page .upload-card {
         grid-template-columns: 30px minmax(0,1fr) !important;
         gap: 8px !important;
         padding: 10px !important;
       }
-      .person-index { width: 28px !important; height: 28px !important; font-size: 9px !important; }
-      .upload-identity { grid-column: 2; }
-      .upload-card h3 { font-size: 14px !important; }
-      .upload-card p { font-size: 9px !important; }
+
+      .person-index {
+        width: 28px !important;
+        height: 28px !important;
+        font-size: 9px !important;
+      }
+
+      .upload-identity {
+        grid-column: 2;
+      }
+
+      .upload-card h3 {
+        font-size: 14px !important;
+      }
+
+      .upload-card p {
+        font-size: 9px !important;
+      }
+
       .account-preview {
         grid-column: 2;
         display: flex;
@@ -258,21 +350,42 @@
         gap: 2px 7px;
         align-items: baseline;
       }
-      .account-preview small { display: none; }
-      .account-preview strong { font-size: 10px; }
-      .account-preview span { font-size: 8px; }
+
+      .account-preview small {
+        display: none;
+      }
+
+      .account-preview strong {
+        font-size: 10px;
+      }
+
+      .account-preview span {
+        font-size: 8px;
+      }
+
       .upload-load-zone {
         grid-column: 1 / -1;
         grid-template-columns: auto 1fr !important;
         gap: 8px !important;
       }
-      .upload-state { font-size: 8px !important; }
-      .upload-summary { padding: 10px 11px !important; }
-      .upload-summary .primary-action { width: 100%; }
+
+      .upload-state {
+        font-size: 8px !important;
+      }
+
+      .upload-summary {
+        padding: 10px 11px !important;
+      }
+
+      .upload-summary .primary-action {
+        width: 100%;
+      }
     }
   </style>
 </head>
+
 <body data-page="upload">
+
   <header class="topbar">
     <div class="brand">
       <div class="brand-mark">FIN</div>
@@ -281,6 +394,7 @@
         <p>Interní systém finanční analýzy</p>
       </div>
     </div>
+
     <div class="case-meta">
       <span>SPIS FTR-2026-0417</span>
       <strong>PŘÍSTUP AUTORIZOVÁN</strong>
@@ -288,33 +402,53 @@
   </header>
 
   <main class="page-shell upload-page">
+
     <section class="access-notice" aria-live="polite">
       <span class="access-pulse" aria-hidden="true"></span>
+
       <div>
         <strong>Byly vám zpřístupněny bankovní výpisy níže uvedených osob.</strong>
-        <span>Kliknutím na konkrétní osobu nahrajete její výpis k finanční analýze.</span>
+        <span>Kliknutím na konkrétní osobu nahrajete její výpis.</span>
         <small>Rozsah dat: 1. 1. 2026–16. 6. 2026</small>
       </div>
     </section>
 
-    <section id="uploadGrid" class="upload-grid" aria-label="Výpisy osob"></section>
+    <section
+      id="uploadGrid"
+      class="upload-grid"
+      aria-label="Výpisy osob">
+    </section>
 
     <section class="upload-summary">
       <div>
         <span>Stav přípravy</span>
         <strong id="loadedCount">0 ze 4 výpisů nahráno</strong>
       </div>
-      <button id="goAnalysis" class="primary-action" type="button" hidden>PŘEJÍT K FINANČNÍ ANALÝZE</button>
+
+      <button
+        id="goAnalysis"
+        class="primary-action"
+        type="button"
+        hidden>
+        PŘEJÍT K FINANČNÍ ANALÝZE
+      </button>
     </section>
 
     <section class="system-note">
       <strong>FINTRON / systémová informace</strong>
-      <p>Výpisy byly zpřístupněny bankami pro potřeby probíhajícího vyšetřování. Systém zpřístupňuje pouze výsledky automatizovaného porovnání; samostatné prohlížení běžných transakcí není v tomto režimu povoleno.</p>
+      <p>
+        Transakce ve výpisech jsou zobrazeny za období od 1. 1. 2026 do 16. 6. 2026.
+      </p>
     </section>
+
   </main>
 
-  <footer>FINTRON Financial Transaction Analysis · interní pracovní prostředí</footer>
+  <footer>
+    FINTRON Financial Transaction Analysis · interní pracovní prostředí
+  </footer>
+
   <script src="data.js?v=20260725d"></script>
   <script src="app.js?v=20260725d"></script>
+
 </body>
 </html>
